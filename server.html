@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Distro Chooser</title>
+<style>
+:root{
+  --bg:#f0f2f5;
+  --card:#fff;
+  --muted:#6b6f76;
+  --accent:#434358;
+  --accent-strong:#1e1e2f;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Segoe UI",sans-serif;background:var(--bg);color:#222;}
+.navbar{background:var(--accent-strong);padding:12px 20px;display:flex;gap:16px;align-items:center;}
+.navbar a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;}
+.navbar a:hover{background:#2f2f48;}
+.wrap{max-width:800px;margin:24px auto;padding:16px;}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:8px;cursor:pointer;}
+.card h3{margin:0;}
+.card p{margin:0;color:var(--muted);}
+.publisher{font-size:12px;color:var(--muted);}
+.btn{display:inline-block;padding:10px 12px;border-radius:8px;background:var(--accent);color:#fff;border:0;cursor:pointer;text-align:center;margin-top:8px;}
+.btn:hover{background:#3b3b5f;}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html">Start</a>
+  <a href="chooser.html">Desktop Chooser</a>
+  <a href="server.html">Server Chooser</a>
+</nav>
+
+<main class="wrap">
+<h1>Server Distro Auswahl</h1>
+<div class="results">
+  <div class="card" onclick="window.location.href='details.html?distro=Ubuntu Server'">
+    <h3>Ubuntu Server</h3>
+    <div class="publisher">Publisher: Canonical</div>
+    <p>Stabiler Server, ideal für Web, Datenbanken und Enterprise-Anwendungen.</p>
+    <button class="btn" onclick="window.open('https://ubuntu.com/download/server','_blank')">Download</button>
+    <button class="btn" onclick="window.open('https://ubuntu.com','_blank')">Homepage</button>
+  </div>
+  <div class="card" onclick="window.location.href='details.html?distro=Fedora Server'">
+    <h3>Fedora Server</h3>
+    <div class="publisher">Publisher: Fedora Project</div>
+    <p>Modernes Server-System mit aktueller Software und stabiler Basis.</p>
+    <button class="btn" onclick="window.open('https://getfedora.org/en/server/','_blank')">Download</button>
+    <button class="btn" onclick="window.open('https://getfedora.org','_blank')">Homepage</button>
+  </div>
+  <div class="card" onclick="window.location.href='details.html?distro=Debian'">
+    <h3>Debian</h3>
+    <div class="publisher">Publisher: Debian Project</div>
+    <p>Sehr stabil, große Paketbasis, ideal für Server und konservative Setups.</p>
+    <button class="btn" onclick="window.open('https://www.debian.org/distrib/','_blank')">Download</button>
+    <button class="btn" onclick="window.open('https://www.debian.org','_blank')">Homepage</button>
+  </div>
+  <div class="card" onclick="window.location.href='details.html?distro=CentOS Stream'">
+    <h3>CentOS Stream</h3>
+    <div class="publisher">Publisher: Red Hat</div>
+    <p>Rolling-Release-Server-Distribution auf RHEL-Basis, stabil für Unternehmen.</p>
+    <button class="btn" onclick="window.open('https://www.centos.org/centos-stream/','_blank')">Download</button>
+    <button class="btn" onclick="window.open('https://www.centos.org','_blank')">Homepage</button>
+  </div>
+</div>
+</main>
+</body>
+</html>

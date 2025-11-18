@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Raspberry Pi Distro Chooser</title>
+<style>
+  :root{
+    --bg:#f0f2f5;
+    --card:#ffffff;
+    --accent:#434358;
+    --accent-strong:#1e1e2f;
+    --muted:#6b6f76;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; font-family:"Segoe UI",sans-serif; background:var(--bg); color:#222;}
+  .navbar{background:var(--accent-strong); padding:12px 20px; display:flex; gap:16px; align-items:center;}
+  .navbar a{color:#fff; text-decoration:none; padding:8px 12px; border-radius:6px;}
+  .navbar a:hover{background:#2f2f48;}
+  .wrap{max-width:800px; margin:24px auto; padding:16px;}
+  h1{margin-bottom:6px;}
+  
+  .results{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin-top:18px;
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    cursor:pointer;
+    transition:transform 0.2s;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 24px rgba(0,0,0,0.1);
+  }
+  .card h3{margin:0;}
+  .publisher{font-size:12px; color:var(--muted);}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="distros.html">Von uns Empfohlene Linux Distros</a>
+  <a href="handheld.html">Von uns Empfohlene Handheld Systeme</a>
+</nav>
+
+<main class="wrap">
+  <h1>ARM Distro Auswahl</h1>
+  <div class="results">
+    <div class="card" onclick="window.location.href='https://ubuntu.com/desktop'">
+      <h3>Ubuntu Desktop</h3>
+      <div class="publisher">Publisher: Canonical</div>
+      <p>Desktop-Version für Pi</p>
+    </div>
+    <div class="card" onclick="window.location.href='https://ubuntu.com/server'">
+      <h3>Ubuntu Server</h3>
+      <div class="publisher">Publisher: Canonical</div>
+      <p>Server Distro von Ubuntu</p>
+    </div>
+    <div class="card" onclick="window.location.href='https://www.raspberrypi.com/software/'">
+      <h3>Raspberry Pi OS</h3>
+      <div class="publisher">Publisher: Raspberry Pi Foundation</div>
+      <p>Offizielles Pi OS (Läuft nur auf Raspberry Pi</p>
+    </div>
+    <div class="card" onclick="window.location.href='https://www.armbian.com/download/?device_support=Standard%20support'">
+      <h3>Armbian</h3>
+      <div class="publisher">Publisher: Armbian community and project</div>
+      <p>Arm Basiertes Linux System</p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

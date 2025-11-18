@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niklas-Leidert Local</title>
+
+    <style>
+        /* ===== GLOBAL ===== */
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            margin-top: 0;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: #1e1e2f;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Links bündig */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            background-color: #3b3b5f;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto; /* Schiebt Button nach rechts */
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* BUTTONS STYLING */
+        .btn {
+            display: inline-block;
+            background-color: #1e1e2f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #3b3b5f;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                background-color: #1e1e2f;
+                width: 100%;
+                padding: 10px 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                border-top: 1px solid #333;
+            }
+
+            .navbar-links a {
+                padding: 14px 20px;
+                text-align: left;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .navbar.active .navbar-links {
+                display: flex;
+                animation: slideDown 0.3s ease forwards;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector(".navbar");
+            nav.classList.toggle("active");
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="navbar-links">
+            <a href="index.html">Start</a>
+            <a href="https://www.niklas-leidert.de" target="_blank">niklas-leidert.de</a>
+            <a href="distros.html">Empfohlene Linux Distros</a>
+            <a href="#">Erste Schritte Mit Linux</a>
+        </div>
+        <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>Niklas-Leidert Local</h1>
+        <p>
+            Willkommen auf <strong>niklas-leidert.local</strong>!  
+            Diese Seite ist eine <strong>lokale Version</strong> der Domain 
+            <strong>niklas-leidert.de</strong> und ist nur im lokalen Netzwerk erreichbar.
+        </p>
+
+        <h2>Warum gibt es diese Domain?</h2>
+        <p>
+            Diese lokale Adresse dient dazu, Dienste, Projekte oder Server innerhalb des aktuellen Netzwerks
+            bereitzustellen – ohne öffentliche Internetverbindung.
+        </p>
+
+        <h2>Alternative Adresse</h2>
+        <p>
+            Je nach Netzwerk kann dieselbe Seite auch unter  
+            <strong>raspberrypi.local</strong> erreichbar sein, falls ein Raspberry Pi als Server läuft.
+        </p>
+
+        
+
+        
+    </div>
+
+</body>
+</html>
